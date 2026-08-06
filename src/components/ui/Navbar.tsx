@@ -13,6 +13,8 @@ import {
   Send,
   Volume2,
   VolumeX,
+  Sun,
+  Moon,
   FileText,
   Command,
   Menu,
@@ -25,6 +27,8 @@ interface NavbarProps {
   activeSection: string;
   onNavigateSection: (sectionId: string) => void;
   onOpenCommandPalette: () => void;
+  isNight?: boolean;
+  onToggleTheme?: () => void;
 }
 
 const NAV_ITEMS = [
@@ -43,6 +47,8 @@ export const Navbar: React.FC<NavbarProps> = ({
   activeSection,
   onNavigateSection,
   onOpenCommandPalette,
+  isNight = true,
+  onToggleTheme,
 }) => {
   const [isMuted, setIsMuted] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -125,6 +131,28 @@ export const Navbar: React.FC<NavbarProps> = ({
             <Command className="w-3.5 h-3.5 text-cyan-400" />
             <span className="hidden sm:inline">⌘K</span>
           </button>
+
+          {/* Theme Toggle (Dark Mood / Bright Mood) */}
+          {onToggleTheme && (
+            <button
+              onClick={() => {
+                soundFx.playClick();
+                onToggleTheme();
+              }}
+              className={`p-2 rounded-xl border transition-all ${
+                isNight
+                  ? 'bg-slate-900/90 border-purple-500/40 text-purple-300 hover:text-purple-200 hover:border-purple-400'
+                  : 'bg-amber-500/10 border-amber-400/50 text-amber-400 hover:bg-amber-500/20'
+              }`}
+              title={isNight ? 'Switch to Bright Mood ☀️' : 'Switch to Dark Mood 🌙'}
+            >
+              {isNight ? (
+                <Moon className="w-4 h-4 text-purple-400" />
+              ) : (
+                <Sun className="w-4 h-4 text-amber-400" />
+              )}
+            </button>
+          )}
 
           {/* Sound FX Toggle */}
           <button

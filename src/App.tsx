@@ -25,11 +25,31 @@ export const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [scrollProgress, setScrollProgress] = useState(0);
   const [commandPaletteOpen, setCommandPaletteOpen] = useState(false);
+  const [isNight, setIsNight] = useState(true);
 
   // Modals
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [selectedPaper, setSelectedPaper] = useState<ResearchPaper | null>(null);
   const [selectedAchievement, setSelectedAchievement] = useState<Achievement | null>(null);
+
+  // Toggle Theme Mode (Dark Mood vs Bright Mood)
+  const toggleTheme = () => {
+    setIsNight((prev) => !prev);
+  };
+
+  useEffect(() => {
+    if (isNight) {
+      document.documentElement.classList.remove('theme-bright');
+      document.documentElement.classList.add('theme-dark');
+      document.body.classList.remove('theme-bright');
+      document.body.classList.add('theme-dark');
+    } else {
+      document.documentElement.classList.remove('theme-dark');
+      document.documentElement.classList.add('theme-bright');
+      document.body.classList.remove('theme-dark');
+      document.body.classList.add('theme-bright');
+    }
+  }, [isNight]);
 
   // Smooth Section Navigation with Header Offset
   const scrollToSection = (sectionId: string) => {
@@ -98,6 +118,8 @@ export const App: React.FC = () => {
         activeSection={activeSection}
         onNavigateSection={scrollToSection}
         onOpenCommandPalette={() => setCommandPaletteOpen(true)}
+        isNight={isNight}
+        onToggleTheme={toggleTheme}
       />
 
       {/* Main Page Sections */}
