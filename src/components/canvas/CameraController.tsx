@@ -66,13 +66,13 @@ export const CameraController: React.FC<CameraControllerProps> = ({
   }, [activeIsland, isIntro]);
 
   useFrame((_, delta) => {
-    // Lerp factor
-    const lerpSpeed = isIntro ? 1.5 : 2.5;
-    const factor = Math.min(delta * lerpSpeed, 1);
+    // Smooth frame-rate independent dampening factor
+    const lerpSpeed = isIntro ? 1.8 : 3.2;
+    const factor = Math.min(delta * lerpSpeed, 0.15);
 
     // Parallax mouse offsets
-    const parallaxX = mouse.current.x * 0.8;
-    const parallaxY = -mouse.current.y * 0.5;
+    const parallaxX = mouse.current.x * 0.6;
+    const parallaxY = -mouse.current.y * 0.4;
 
     const desiredCamPos = new THREE.Vector3(
       targetPos.current.x + parallaxX,

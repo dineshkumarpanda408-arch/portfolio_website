@@ -8,6 +8,8 @@
 
 html {
   scroll-behavior: smooth;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
@@ -20,6 +22,8 @@ body {
   overflow-y: auto;
   min-height: 100vh;
   width: 100%;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 /* Glassmorphism & Smooth Dark Mode Utilities */

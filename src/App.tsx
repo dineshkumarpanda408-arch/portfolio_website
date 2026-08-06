@@ -31,31 +31,41 @@ export const App: React.FC = () => {
   const [selectedPaper, setSelectedPaper] = useState<ResearchPaper | null>(null);
   const [selectedAchievement, setSelectedAchievement] = useState<Achievement | null>(null);
 
-  // Smooth Section Navigation
+  // Smooth Section Navigation with Header Offset
   const scrollToSection = (sectionId: string) => {
     const el = document.getElementById(sectionId);
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+      const yOffset = -70;
+      const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
       setActiveSection(sectionId);
     }
   };
 
-  // Scroll Progress & Scroll Spy Listener
+  // Scroll Progress & Scroll Spy Listener using requestAnimationFrame
   useEffect(() => {
-    const handleScroll = () => {
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = Math.min(Math.max(window.scrollY / Math.max(totalHeight, 1), 0), 1);
-      setScrollProgress(progress);
+    let ticking = false;
 
-      // Section Scroll Spy
-      const scrollPos = window.scrollY + 200;
-      for (let i = SECTION_IDS.length - 1; i >= 0; i--) {
-        const secId = SECTION_IDS[i];
-        const el = document.getElementById(secId);
-        if (el && el.offsetTop <= scrollPos) {
-          setActiveSection(secId);
-          break;
-        }
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const progress = Math.min(Math.max(window.scrollY / Math.max(totalHeight, 1), 0), 1);
+          setScrollProgress(progress);
+
+          // Section Scroll Spy
+          const scrollPos = window.scrollY + 220;
+          for (let i = SECTION_IDS.length - 1; i >= 0; i--) {
+            const secId = SECTION_IDS[i];
+            const el = document.getElementById(secId);
+            if (el && el.offsetTop <= scrollPos) {
+              setActiveSection((prev) => (prev !== secId ? secId : prev));
+              break;
+            }
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
