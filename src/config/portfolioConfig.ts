@@ -190,78 +190,125 @@ export const portfolioConfig: PortfolioConfig = {
       id: "smart-campus",
       title: "Smart Campus Complaint Management System",
       shortDesc: "Production-deployed role-based complaint management platform for NIST University.",
-      fullDesc: "Built a full-stack, production-deployed complaint management platform for NIST University with role-based access across student, faculty, staff, department head, and admin roles. Implemented complaint tracking with SLA-based auto-escalation and real-time notifications to keep resolution times accountable. Developed an admin dashboard for monitoring complaint volume, status, and escalations across departments. Resolved production issues including a race condition in authentication context and route-level security gaps; maintained Postman collections for live environment.",
-      techStack: ["MERN", "Express", "TypeScript", "Sequelize", "MySQL", "React", "Vite", "Tailwind CSS", "Render"],
-      githubUrl: "https://github.com/dineshkumarpanda408-arch/smart-campus-complaint-system",
+      fullDesc: "Built a full-stack, production-deployed complaint management platform for NIST University with role-based access across student, faculty, staff, department head, and admin roles. Implemented complaint tracking with SLA-based auto-escalation and real-time notifications to keep resolution times accountable. Resolved production issues including authentication context state and route security gaps.",
+      techStack: ["MERN", "Express", "TypeScript", "Sequelize", "MySQL", "React", "Vite", "Render"],
+      githubUrl: "https://github.com/dineshkumarpanda408-arch/smart-campus-complaint-main-from-laptop",
       liveUrl: "https://smart-campus-complaint.onrender.com",
       image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800",
       featured: true,
       metrics: "Live Deployed on Render for NIST University",
       achievements: [
-        "Production deployed for NIST University across 5 user roles (Student, Faculty, Staff, Dept Head, Admin)",
+        "Production deployed for NIST University across 5 user roles",
         "SLA-based auto-escalation & real-time notification engine",
         "Resolved Auth Context race conditions & route-level security gaps"
       ]
     },
     {
-      id: "ai-scholarship-app",
-      title: "AI Scholarship Suggestion App",
-      shortDesc: "AI-powered eligibility matching app recommending scholarships based on student profiles.",
-      fullDesc: "Built a mobile & desktop application that recommends scholarships to students based on their academic and demographic profile. Implemented AI-powered eligibility matching to surface only scholarships a student actually qualifies for. Added search and filter functionality plus automated deadline reminders to reduce missed opportunities.",
-      techStack: ["Flutter", "Dart", "AI API", "MySQL", "MongoDB"],
-      githubUrl: "https://github.com/dineshkumarpanda408-arch/ai-scholarship-app",
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800",
+      id: "finshe-backend",
+      title: "FinShe Financial & Safety Backend API",
+      shortDesc: "High-performance Node.js REST API serving financial empowerment & safety tracking.",
+      fullDesc: "Engineered a secure Node.js & Express backend REST API for FinShe financial management and safety platform. Features JWT authentication, secure MongoDB data modeling, transaction auditing, and real-time distress alert notification pipelines.",
+      techStack: ["Node.js", "Express", "MongoDB", "JWT", "REST API"],
+      githubUrl: "https://github.com/dineshkumarpanda408-arch/finshe-backend",
+      image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&q=80&w=800",
       featured: true,
-      metrics: "AI Eligibility Matching Engine",
+      metrics: "Secure RESTful Microservice",
       achievements: [
-        "AI-powered eligibility matching eliminating unqualified listings",
-        "Automated deadline notifications and reminder alerts",
-        "Multi-database support with MySQL & MongoDB"
+        "JWT role-based token authentication & encrypted password hashing",
+        "Transaction logging & real-time distress alert notification pipelines",
+        "High-throughput MongoDB schema optimization"
       ]
     },
     {
-      id: "ai-book-summarizer",
-      title: "AI Book & Document Summarizer",
-      shortDesc: "AI document intelligence tool generating chapter-wise summaries & automated quizzes.",
-      fullDesc: "Developed a web application that generates concise summaries from an uploaded PDF or pasted text using an AI API. Implemented chapter-wise summarization with key points and takeaways extracted automatically. Added an optional quiz generation feature to reinforce comprehension of summarized content.",
-      techStack: ["JavaScript", "HTML5", "CSS3", "AI API Integration", "PDF Parsing"],
-      githubUrl: "https://github.com/dineshkumarpanda408-arch/ai-book-summarizer",
-      image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800",
+      id: "transitops-platform",
+      title: "TransitOps Smart Transport Operations Platform",
+      shortDesc: "Intelligent transport operations management & fleet tracking platform.",
+      fullDesc: "Collaborative smart transit management platform optimizing public bus route dispatches, fleet vehicle tracking, driver shift management, and operational telemetry analytics for transit hubs.",
+      techStack: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+      githubUrl: "https://github.com/AshXtreme/TransitOps-Smart-Transport-Operations-Platform",
+      image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=800",
       featured: true,
-      metrics: "Automated Chapter Summaries & Quiz Gen",
+      metrics: "Fleet Route & Dispatch Analytics",
       achievements: [
-        "PDF & Raw Text AI chapter-wise extraction",
-        "Automated comprehension quiz generator",
-        "Key takeaways extraction pipeline"
+        "Interactive route planning & vehicle telemetry monitoring",
+        "Driver schedule optimization & real-time alert triage",
+        "Modular React frontend & Express API architecture"
       ]
     },
     {
-      id: "waste-management-system",
-      title: "Campus Waste Management System",
-      shortDesc: "Database-backed campus waste collection tracking platform for NIST University.",
-      fullDesc: "Developed a web-based system to track and manage campus waste collection with a database-backed reporting workflow for NIST University. Designed user-friendly interfaces for waste reporting, categorization, and monitoring.",
-      techStack: ["HTML", "CSS", "JavaScript", "DBMS", "MySQL"],
-      githubUrl: "https://github.com/dineshkumarpanda408-arch/waste-management-system",
-      image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&q=80&w=800",
+      id: "nist-campus-admin",
+      title: "NIST Smart Campus Admin Dashboard",
+      shortDesc: "Modern React.js admin portal enabling university department heads to triage complaints.",
+      fullDesc: "Developed an interactive React.js administration web portal allowing NIST University department heads and campus admins to monitor live complaint volumes, track SLA escalation timers, manage technician assignments, and export analytical reports.",
+      techStack: ["React.js", "JavaScript", "Tailwind CSS", "Axios", "Recharts"],
+      githubUrl: "https://github.com/ruvantex/nist-smart-campus-admin-reactjs",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
       featured: false,
-      metrics: "Deployed at NIST University Campus",
+      metrics: "Role-Based Admin Triage Dashboard",
       achievements: [
-        "Database-backed waste reporting & categorization workflow",
-        "Interactive reporting dashboard for campus collection monitoring"
+        "Real-time SLA resolution countdowns & complaint status charts",
+        "Department-level ticket assignment & audit history logging"
+      ]
+    },
+    {
+      id: "nist-campus-back",
+      title: "NIST Smart Campus Backend Engine",
+      shortDesc: "Scalable Node.js & Express microservice powering campus complaint workflows.",
+      fullDesc: "Built the core backend service handling authentication middleware, Sequelize MySQL ORM models, SLA auto-escalation cron triggers, and complaint ticket state transitions for NIST University.",
+      techStack: ["Node.js", "Express", "Sequelize", "MySQL", "Postman"],
+      githubUrl: "https://github.com/ruvantex/nist-smart-campus-back-nodejs",
+      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800",
+      featured: false,
+      metrics: "Node.js & Sequelize Backend",
+      achievements: [
+        "Automated SLA ticket escalation background scheduler",
+        "Clean Postman API documentation & route security middleware"
+      ]
+    },
+    {
+      id: "bmi-calculator",
+      title: "BMI & Health Metrics Calculator",
+      shortDesc: "Interactive health metrics calculator tracking body mass index & body composition.",
+      fullDesc: "Built a sleek mobile and web health metrics app computing Body Mass Index (BMI), body fat estimates, and healthy target ranges with dynamic visual gauge indicators.",
+      techStack: ["Flutter", "Dart", "JavaScript", "CSS3"],
+      githubUrl: "https://github.com/dineshkumarpanda408-arch/BMI",
+      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=800",
+      featured: false,
+      metrics: "Cross-Platform Health App",
+      achievements: [
+        "Interactive gauge visualization & metric/imperial unit conversion",
+        "Personalized body composition classification breakdown"
+      ]
+    },
+    {
+      id: "3d-portfolio",
+      title: "3D Interactive Portfolio Website",
+      shortDesc: "Interactive 3D WebGL floating island portfolio featuring Blender 3D animations & AI assistant.",
+      fullDesc: "Designed and built an interactive 3D WebGL developer portfolio using React, Vite, Three.js, React Three Fiber, Framer Motion, and Tailwind CSS. Features 3D floating island ecosystems, particle shaders, sound FX, and command palette navigation.",
+      techStack: ["React", "Vite", "Three.js", "R3F", "Framer Motion", "Tailwind CSS"],
+      githubUrl: "https://github.com/dineshkumarpanda408-arch/portfolio_website",
+      liveUrl: "https://portfolio-website-o9ll.onrender.com",
+      image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800",
+      featured: false,
+      metrics: "Production Deployed on Render",
+      achievements: [
+        "Interactive 3D Floating Island camera navigation",
+        "Custom particle GLSL shaders & Blender 3D animations",
+        "Integrated AI Drone Assistant & command palette"
       ]
     }
   ],
 
   mobileApps: [
     {
-      id: "app-scholarship",
-      title: "AI Scholarship Suggestion App",
-      subtitle: "Flutter & AI-Powered Mobile App",
-      description: "Recommends scholarships based on student academic & demographic profiles with AI eligibility matching and deadline reminders.",
-      techStack: ["Flutter", "Dart", "AI API", "MySQL", "MongoDB"],
-      screenImage: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=600",
-      features: ["AI Eligibility Matching", "Deadline Alerts", "Profile Filtering", "MongoDB Sync"],
-      githubUrl: "https://github.com/dineshkumarpanda408-arch/ai-scholarship-app"
+      id: "app-bmi",
+      title: "BMI & Health Metrics Calculator",
+      subtitle: "Flutter & Mobile Health Application",
+      description: "Computes Body Mass Index, body composition estimates, and healthy target ranges with interactive visual gauge indicators.",
+      techStack: ["Flutter", "Dart", "JavaScript", "CSS3"],
+      screenImage: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=600",
+      features: ["Metric & Imperial Unit Conversion", "Body Fat Composition Breakdown", "Interactive Gauge Visuals", "Health Recommendations"],
+      githubUrl: "https://github.com/dineshkumarpanda408-arch/BMI"
     }
   ],
 
@@ -273,17 +320,36 @@ export const portfolioConfig: PortfolioConfig = {
       description: "MERN Stack complaint resolution platform with 5 user roles, SLA auto-escalation, and live Render deployment.",
       techStack: ["React", "Express", "TypeScript", "Sequelize", "MySQL", "Render"],
       image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800",
-      githubUrl: "https://github.com/dineshkumarpanda408-arch/smart-campus-complaint-system",
+      githubUrl: "https://github.com/dineshkumarpanda408-arch/smart-campus-complaint-main-from-laptop",
       liveUrl: "https://smart-campus-complaint.onrender.com"
     },
     {
-      id: "web-ai-summarizer",
-      title: "AI Book Summarizer & Quiz Generator",
-      url: "ai-summarizer.dineshkumar.dev",
-      description: "AI-powered document summarization suite with PDF parsing and automated quiz generation.",
-      techStack: ["JavaScript", "AI API", "HTML5", "CSS3"],
+      id: "web-finshe",
+      title: "FinShe Financial & Safety API",
+      url: "github.com/dineshkumarpanda408-arch/finshe-backend",
+      description: "High-performance Node.js & Express REST API for FinShe financial management and safety platform.",
+      techStack: ["Node.js", "Express", "MongoDB", "JWT"],
+      image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&q=80&w=800",
+      githubUrl: "https://github.com/dineshkumarpanda408-arch/finshe-backend"
+    },
+    {
+      id: "web-transitops",
+      title: "TransitOps Smart Transport Operations",
+      url: "github.com/AshXtreme/TransitOps-Smart-Transport-Operations-Platform",
+      description: "Intelligent transportation operations management & public bus fleet tracking platform.",
+      techStack: ["React", "Node.js", "Express", "MongoDB"],
+      image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=800",
+      githubUrl: "https://github.com/AshXtreme/TransitOps-Smart-Transport-Operations-Platform"
+    },
+    {
+      id: "web-3d-portfolio",
+      title: "3D Floating Island Portfolio",
+      url: "portfolio-website-o9ll.onrender.com",
+      description: "Interactive 3D WebGL developer portfolio featuring Blender 3D animations and AI assistant.",
+      techStack: ["React", "Vite", "Three.js", "R3F", "Tailwind CSS"],
       image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800",
-      githubUrl: "https://github.com/dineshkumarpanda408-arch/ai-book-summarizer"
+      githubUrl: "https://github.com/dineshkumarpanda408-arch/portfolio_website",
+      liveUrl: "https://portfolio-website-o9ll.onrender.com"
     }
   ],
 
