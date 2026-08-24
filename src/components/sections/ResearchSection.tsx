@@ -83,17 +83,32 @@ export const ResearchSection: React.FC<ResearchSectionProps> = ({
                   soundFx.playClick();
                   onSelectAchievement(item);
                 }}
-                className="p-5 rounded-2xl glass-panel border border-white/10 hover:border-amber-400/40 transition-all cursor-pointer bg-[#0c101d]"
+                className="group p-5 rounded-2xl glass-panel border border-white/10 hover:border-amber-400/40 transition-all cursor-pointer bg-[#0c101d] flex flex-col sm:flex-row gap-4 items-start"
               >
-                <div className="flex items-center justify-between mb-1.5">
-                  <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-400/30 text-amber-300">
-                    {item.badge}
-                  </span>
-                  <span className="text-[11px] text-slate-400">{item.date}</span>
+                {item.imageUrl && (
+                  <div className="w-full sm:w-28 h-24 sm:h-20 rounded-xl overflow-hidden bg-slate-900 border border-white/10 shrink-0 relative group-hover:border-amber-400/50 transition-colors">
+                    <img
+                      src={item.imageUrl}
+                      alt={item.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-transparent transition-colors" />
+                  </div>
+                )}
+
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center justify-between mb-1.5 gap-2">
+                    <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-400/30 text-amber-300">
+                      {item.badge}
+                    </span>
+                    <span className="text-[11px] text-slate-400 shrink-0">{item.date}</span>
+                  </div>
+                  <h4 className="text-sm font-bold text-white mb-1 group-hover:text-amber-300 transition-colors">
+                    {item.title}
+                  </h4>
+                  <p className="text-[11px] text-slate-400 mb-1.5 font-medium">{item.issuer}</p>
+                  <p className="text-xs text-slate-300 leading-relaxed">{item.description}</p>
                 </div>
-                <h4 className="text-sm font-bold text-white mb-1">{item.title}</h4>
-                <p className="text-[11px] text-slate-400 mb-1.5">{item.issuer}</p>
-                <p className="text-xs text-slate-300">{item.description}</p>
               </div>
             ))}
           </div>

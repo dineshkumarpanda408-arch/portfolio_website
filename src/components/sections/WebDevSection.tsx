@@ -1,8 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Monitor, ExternalLink, Github, Globe } from 'lucide-react';
+import { Monitor, ExternalLink, Github, Globe, Terminal, Code2 } from 'lucide-react';
 import { portfolioConfig } from '../../config/portfolioConfig';
-import { Monitor3DCanvas } from '../canvas/3d/Monitor3DCanvas';
 import { soundFx } from '../../utils/soundEffects';
 
 export const WebDevSection: React.FC = () => {
@@ -13,7 +12,7 @@ export const WebDevSection: React.FC = () => {
       <div className="text-center max-w-3xl mx-auto mb-16">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 text-xs font-semibold uppercase tracking-wider mb-4">
           <Monitor className="w-3.5 h-3.5 text-cyan-400" />
-          <span>WebGL 3D Workstation Display</span>
+          <span>Full-Stack Web Engineering</span>
         </div>
         <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
           Web Systems & Interactive Applications
@@ -23,14 +22,8 @@ export const WebDevSection: React.FC = () => {
         </p>
       </div>
 
-      {/* 3D Monitor Workstation Display Canvas */}
-      <Monitor3DCanvas
-        webTitle={primaryWeb.title}
-        webUrl={primaryWeb.url}
-      />
-
       {/* Grid of Web Projects */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
         {portfolioConfig.webDevShowcases.map((web) => (
           <motion.div
             key={web.id}
@@ -47,27 +40,30 @@ export const WebDevSection: React.FC = () => {
                 <div className="w-3 h-3 rounded-full bg-amber-500/80" />
                 <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
               </div>
-              <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-950 text-slate-400 text-[11px] font-mono border border-white/5 max-w-[220px] truncate">
+              <div className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-950 text-slate-300 text-[11px] font-mono border border-white/5 max-w-[240px] truncate">
                 <Globe className="w-3 h-3 text-cyan-400 shrink-0" />
                 <span className="truncate">{web.url}</span>
               </div>
             </div>
 
-            {/* Browser Content Image */}
-            <div className="relative h-56 sm:h-64 w-full overflow-hidden">
-              <img
-                src={web.image}
-                alt={web.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0c101d] via-transparent to-transparent" />
+            {/* Browser Content Header Box */}
+            <div className="p-6 bg-gradient-to-br from-slate-900/90 to-slate-950 border-b border-white/10 space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-[11px] font-mono text-cyan-400 flex items-center gap-1.5">
+                  <Terminal className="w-3.5 h-3.5 text-cyan-400" />
+                  Live Web Application
+                </span>
+                <span className="text-[10px] font-semibold uppercase px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-400/30">
+                  Production Ready
+                </span>
+              </div>
+              <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">
+                {web.title}
+              </h3>
             </div>
 
             {/* Content Details */}
             <div className="p-6 space-y-4">
-              <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">
-                {web.title}
-              </h3>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
                 {web.description}
               </p>

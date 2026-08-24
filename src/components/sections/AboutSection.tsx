@@ -17,12 +17,12 @@ export const AboutSection: React.FC = () => {
       </div>
 
       <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        {/* Left Column: 3D Pop-Out Photo Card */}
+        {/* Left Column: Profile Photo Card */}
         <div className="lg:col-span-5 flex justify-center">
           <motion.div
-            whileHover={{ rotateY: 8, rotateX: -8, scale: 1.02 }}
-            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-            className="relative w-full max-w-sm glass-panel p-4 rounded-3xl border border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.5)] bg-[#0c101d]/90 group"
+            whileHover={{ y: -4, scale: 1.01 }}
+            transition={{ duration: 0.3 }}
+            className="relative w-full max-w-sm glass-panel p-4 rounded-3xl border border-cyan-400/30 shadow-2xl bg-[#0c101d]/90 group"
           >
             <div className="relative h-80 sm:h-96 w-full rounded-2xl overflow-hidden border border-cyan-400/40">
               <img

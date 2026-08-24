@@ -183,10 +183,10 @@ export const ContactSection: React.FC = () => {
                 <button
                   type="submit"
                   onClick={() => soundFx.playClick()}
-                  className="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-xs shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 transition-all flex items-center justify-center gap-2"
+                  className="shimmer-button w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 text-white font-bold text-xs sm:text-sm shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/50 hover:scale-[1.01] transition-all flex items-center justify-center gap-2 transform"
                 >
                   <Send className="w-4 h-4" />
-                  <span>Send Message</span>
+                  <span>Send Direct Message</span>
                 </button>
               </form>
             )}

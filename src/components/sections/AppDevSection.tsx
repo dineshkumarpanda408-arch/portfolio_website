@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Smartphone, CheckCircle2, ChevronRight } from 'lucide-react';
+import { Smartphone, CheckCircle2, ChevronRight, Wifi, Battery, Signal, Zap } from 'lucide-react';
 import { portfolioConfig } from '../../config/portfolioConfig';
-import { Phone3DCanvas } from '../canvas/3d/Phone3DCanvas';
 import { soundFx } from '../../utils/soundEffects';
 
 export const AppDevSection: React.FC = () => {
@@ -13,23 +12,66 @@ export const AppDevSection: React.FC = () => {
       <div className="text-center max-w-3xl mx-auto mb-16">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-400/30 text-blue-300 text-xs font-semibold uppercase tracking-wider mb-4">
           <Smartphone className="w-3.5 h-3.5 text-blue-400" />
-          <span>WebGL 3D Smartphone Mobile Showcase</span>
+          <span>Mobile App Showcase</span>
         </div>
         <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
           Mobile Application Engineering
         </h2>
         <p className="text-slate-400 text-sm mt-3">
-          Cross-platform Flutter & React Native mobile applications showcasing AI eligibility matching and real-time alerts.
+          Cross-platform Flutter & Dart mobile applications showcasing health metric calculations and intelligent eligibility workflows.
         </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        {/* Left Column: WebGL 3D Smartphone Device Model */}
+        {/* Left Column: Pure CSS Smartphone Preview Card */}
         <div className="lg:col-span-6 flex justify-center">
-          <Phone3DCanvas
-            appTitle={currentApp.title}
-            appSubtitle={currentApp.subtitle}
-          />
+          <div className="relative w-full max-w-sm glass-panel p-6 rounded-[2.5rem] border border-cyan-400/30 shadow-2xl bg-[#0c101d] space-y-6">
+            {/* Phone Notch & Status Header */}
+            <div className="flex items-center justify-between text-xs text-slate-400 pt-1 px-2 border-b border-white/10 pb-3">
+              <span className="font-mono font-bold text-white">9:41 AM</span>
+              <div className="w-20 h-4 bg-slate-900 rounded-full border border-white/10 mx-auto" />
+              <div className="flex items-center gap-1.5 text-cyan-400">
+                <Signal className="w-3 h-3" />
+                <Wifi className="w-3 h-3" />
+                <Battery className="w-3.5 h-3.5" />
+              </div>
+            </div>
+
+            {/* App Screen Content Preview */}
+            <div className="p-6 rounded-2xl bg-gradient-to-b from-slate-900 to-slate-950 border border-white/10 space-y-4">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 text-xs font-mono">
+                <Zap className="w-3 h-3 text-cyan-400" />
+                <span>Flutter / Dart Mobile App</span>
+              </div>
+              <h3 className="text-xl font-extrabold text-white">
+                {currentApp.title}
+              </h3>
+              <p className="text-xs text-cyan-400 font-mono font-semibold">
+                {currentApp.subtitle}
+              </p>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                {currentApp.description}
+              </p>
+            </div>
+
+            {/* Features Badge Grid */}
+            <div className="space-y-2">
+              <h4 className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+                Mobile App Capabilities
+              </h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {currentApp.features.map((feat, fIdx) => (
+                  <div
+                    key={fIdx}
+                    className="p-2.5 rounded-xl bg-slate-900/80 border border-white/10 text-slate-200 text-xs flex items-center gap-2"
+                  >
+                    <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                    <span className="text-[11px]">{feat}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Right Column: Interactive App Switcher & Details */}

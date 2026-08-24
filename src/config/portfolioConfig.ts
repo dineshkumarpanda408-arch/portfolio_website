@@ -71,6 +71,7 @@ export interface Achievement {
   date: string;
   description: string;
   badge: string;
+  imageUrl?: string;
 }
 
 export interface ResearchPaper {
@@ -282,19 +283,19 @@ export const portfolioConfig: PortfolioConfig = {
     },
     {
       id: "3d-portfolio",
-      title: "3D Interactive Portfolio Website",
-      shortDesc: "Interactive 3D WebGL floating island portfolio featuring Blender 3D animations & AI assistant.",
-      fullDesc: "Designed and built an interactive 3D WebGL developer portfolio using React, Vite, Three.js, React Three Fiber, Framer Motion, and Tailwind CSS. Features 3D floating island ecosystems, particle shaders, sound FX, and command palette navigation.",
-      techStack: ["React", "Vite", "Three.js", "R3F", "Framer Motion", "Tailwind CSS"],
+      title: "Interactive Developer Portfolio",
+      shortDesc: "High-performance developer portfolio featuring MERN project showcases, interactive modals, and AI assistant.",
+      fullDesc: "Designed and built an interactive developer portfolio using React, Vite, Framer Motion, and Tailwind CSS. Features role-based project showcases, dark/light theme switching, custom sound effects, and command palette navigation.",
+      techStack: ["React", "Vite", "TypeScript", "Framer Motion", "Tailwind CSS"],
       githubUrl: "https://github.com/dineshkumarpanda408-arch/portfolio_website",
       liveUrl: "https://portfolio-website-o9ll.onrender.com",
       image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800",
       featured: false,
       metrics: "Production Deployed on Render",
       achievements: [
-        "Interactive 3D Floating Island camera navigation",
-        "Custom particle GLSL shaders & Blender 3D animations",
-        "Integrated AI Drone Assistant & command palette"
+        "High-performance glassmorphism UI layout",
+        "Fluid 60FPS Framer Motion animations & theme system",
+        "Integrated Command Palette (Ctrl+K) & modal triage"
       ]
     }
   ],
@@ -343,10 +344,10 @@ export const portfolioConfig: PortfolioConfig = {
     },
     {
       id: "web-3d-portfolio",
-      title: "3D Floating Island Portfolio",
+      title: "Interactive Developer Portfolio",
       url: "portfolio-website-o9ll.onrender.com",
-      description: "Interactive 3D WebGL developer portfolio featuring Blender 3D animations and AI assistant.",
-      techStack: ["React", "Vite", "Three.js", "R3F", "Tailwind CSS"],
+      description: "Blazing fast developer portfolio featuring MERN projects, theme controls, and command menu.",
+      techStack: ["React", "Vite", "TypeScript", "Tailwind CSS"],
       image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800",
       githubUrl: "https://github.com/dineshkumarpanda408-arch/portfolio_website",
       liveUrl: "https://portfolio-website-o9ll.onrender.com"
@@ -355,17 +356,17 @@ export const portfolioConfig: PortfolioConfig = {
 
   animationItems: [
     {
-      id: "anim-blender-3d",
-      title: "Blender 3D Asset Modeling & Animation",
-      category: "Blender 3D Animation",
-      description: "Custom Blender 3D modeling, rigging, keyframe animation, and lighting setups exported for WebGL interactive rendering.",
+      id: "anim-spring-physics",
+      title: "Spring Physics & Fluid Gesture Physics",
+      category: "UI Micro-Interaction",
+      description: "Physics-driven spring momentum animations with fluid gesture damping.",
       previewType: "floating-cube"
     },
     {
-      id: "anim-3d-keyboard",
-      title: "Commercial Blender 3D Keyboard Hero",
-      category: "3D WebGL",
-      description: "Interactive R3F 3D mechanical keyboard modeled in Blender with scroll-driven key depress, illuminated switches, and camera retreat.",
+      id: "anim-theme-engine",
+      title: "Dynamic Light/Dark Theme Transition Engine",
+      category: "UI Micro-Interaction",
+      description: "Instant CSS custom property theme swapping with smooth color interpolation.",
       previewType: "interactive-tilt"
     },
     {
@@ -468,6 +469,56 @@ export const portfolioConfig: PortfolioConfig = {
   ],
 
   achievements: [
+    {
+      id: "cert-icads-26",
+      title: "Air Defence & Security Conference (ICADS-26)",
+      category: "Certification",
+      issuer: "Army Air Defence College & NIST University (Certificate ID: ICADS/CONF/2026/CAC/132)",
+      date: "Feb 12 – 13, 2026",
+      description: "Certificate of Participation in the International Conference on Air Defence and Security (ICADS-26) organized by Army Air Defence College and NIST University, Berhampur, Odisha.",
+      badge: "🛡️ International Conference",
+      imageUrl: "/certificates/icads-26-conference.jpg"
+    },
+    {
+      id: "cert-intel-ai-sashakt",
+      title: "Intel & MeitY 'I'm AI Sashakt' Recognition",
+      category: "Certification",
+      issuer: "Intel, Ministry of Electronics & IT (MeitY) & INDIAai",
+      date: "2025",
+      description: "Recognized with the 'I'm AI Sashakt' certification badge by Intel and MeitY (Government of India) under the INDIAai and AI Impact Summit initiative.",
+      badge: "⚡ Intel AI Certificate",
+      imageUrl: "/certificates/intel-ai-sashakt.jpg"
+    },
+    {
+      id: "cert-nxtwave-genai",
+      title: "Build Your Own Generative AI Model Workshop",
+      category: "Certification",
+      issuer: "NxtWave & AI Expert Mr. Abhinav Devaguptapu",
+      date: "Feb 10, 2025",
+      description: "Participated in the hands-on workshop 'AI for Students: Build Your Own Generative AI Model' conducted by AI expert Mr. Abhinav Devaguptapu and NxtWave CEO Rahul Attuluri.",
+      badge: "🤖 GenAI Workshop",
+      imageUrl: "/certificates/nxtwave-genai-workshop.jpg"
+    },
+    {
+      id: "cert-iit-academic-writing",
+      title: "20-Hour Academic Writing Proficiency Course",
+      category: "Certification",
+      issuer: "IIT Bhubaneswar & Siksha 'O' Anusandhan University (ICSSR)",
+      date: "Sep 11 – 30, 2024",
+      description: "Completed the 20-Hour Proficiency Course in Academic Writing Skills organized by IIT Bhubaneswar & SOA University in association with ICSSR, fulfilling all tasks and assessments.",
+      badge: "🎓 IIT & ICSSR Course",
+      imageUrl: "/certificates/iit-bhubaneswar-academic-writing.jpg"
+    },
+    {
+      id: "cert-ieee-wise",
+      title: "IEEE WiSE Research Paper Writing Certification",
+      category: "Certification",
+      issuer: "IEEE India Council Student Activities Committee (SAC)",
+      date: "Aug 13, 2024",
+      description: "Certificate of Participation for WiSE (Webinar for Innovation, Skills and Excellence) Episode 6: 'Writing skills for a quality research paper', conducted by IEEE India Council SAC.",
+      badge: "📜 IEEE Certification",
+      imageUrl: "/certificates/ieee-wise-research.jpg"
+    },
     {
       id: "nist-campus-deployment",
       title: "Production Deployment @ NIST University",

@@ -15,7 +15,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
       <div className="text-center max-w-3xl mx-auto mb-16">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 text-xs font-semibold uppercase tracking-wider mb-4">
           <FolderGit2 className="w-3.5 h-3.5 text-cyan-400" />
-          <span>Interactive Apple Bento Grid Showcase</span>
+          <span>Engineering Project Portfolio</span>
         </div>
         <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
           Featured Engineering Projects
@@ -36,30 +36,29 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
             }}
             className="group flex flex-col justify-between"
           >
-            {/* Image Preview Container */}
-            <div className="relative h-64 sm:h-72 w-full overflow-hidden">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0c101d] via-[#0c101d]/30 to-transparent" />
+            {/* High-Tech Card Header */}
+            <div className="relative p-6 bg-gradient-to-br from-slate-900 via-[#0d1424] to-slate-950 border-b border-white/10 overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none" />
               
+              <div className="flex items-center justify-between mb-4">
+                <span className="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 text-[11px] font-semibold font-mono uppercase tracking-wider">
+                  {project.featured ? 'Featured System' : 'Engineering Showcase'}
+                </span>
+                <div className="w-8 h-8 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white group-hover:bg-cyan-500 group-hover:text-slate-950 transition-all">
+                  <ArrowUpRight className="w-4 h-4" />
+                </div>
+              </div>
+
+              <h3 className="text-xl font-extrabold text-white group-hover:text-cyan-300 transition-colors mb-2">
+                {project.title}
+              </h3>
+
               {project.metrics && (
-                <div className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-slate-900/90 border border-cyan-400/40 text-cyan-300 text-xs font-semibold flex items-center gap-1.5 shadow-lg backdrop-blur-md">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-[11px] font-medium">
                   <TrendingUp className="w-3.5 h-3.5 text-cyan-400" />
                   <span>{project.metrics}</span>
                 </div>
               )}
-
-              <div className="absolute bottom-4 left-6 right-6 flex items-center justify-between">
-                <h3 className="text-xl font-extrabold text-white group-hover:text-cyan-300 transition-colors">
-                  {project.title}
-                </h3>
-                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white group-hover:bg-cyan-500 group-hover:text-slate-950 transition-all">
-                  <ArrowUpRight className="w-4 h-4" />
-                </div>
-              </div>
             </div>
 
             {/* Content Body */}

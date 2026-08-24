@@ -30,23 +30,16 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           <X className="w-4 h-4" />
         </button>
 
-        {/* Project Image Banner */}
-        <div className="relative h-48 sm:h-60 w-full shrink-0 overflow-hidden">
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0c101d] via-[#0c101d]/40 to-transparent" />
+        {/* Project High-Tech Banner Header */}
+        <div className="relative p-6 sm:p-8 bg-gradient-to-r from-slate-900 via-[#0f172a] to-[#0c101d] border-b border-white/10 shrink-0">
+          <div className="absolute top-0 right-12 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
           
-          <div className="absolute bottom-4 left-6 right-6">
-            <span className="px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-400/40 text-cyan-300 text-[11px] font-semibold uppercase tracking-wider mb-1.5 inline-block">
-              Case Study & Technical Specs
-            </span>
-            <h2 className="text-xl sm:text-2xl font-extrabold text-white">
-              {project.title}
-            </h2>
-          </div>
+          <span className="px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-400/40 text-cyan-300 text-[11px] font-semibold uppercase tracking-wider mb-2 inline-block">
+            System Architecture & Technical Specs
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
+            {project.title}
+          </h2>
         </div>
 
         {/* Modal Scrollable Body */}

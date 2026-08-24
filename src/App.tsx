@@ -10,8 +10,6 @@ import { WebDevSection } from './components/sections/WebDevSection';
 import { AnimationSection } from './components/sections/AnimationSection';
 import { ResearchSection } from './components/sections/ResearchSection';
 import { ContactSection } from './components/sections/ContactSection';
-import { BackgroundParticleCanvas } from './components/canvas/BackgroundParticleCanvas';
-import { FloatingKeyWidget } from './components/canvas/FloatingKeyWidget';
 import { CommandPalette } from './components/ui/CommandPalette';
 import { ProjectModal } from './components/ui/ProjectModal';
 import { ResearchModal } from './components/ui/ResearchModal';
@@ -109,9 +107,14 @@ export const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-[#050816] text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-200 overflow-x-hidden font-sans">
-      {/* Background Interactive Particle Mesh */}
-      <BackgroundParticleCanvas />
+    <div className="relative min-h-screen bg-[#030712] text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-200 overflow-x-hidden font-sans">
+      {/* High-Performance Ambient Pure CSS Background Glow */}
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div className="absolute -top-40 left-1/4 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[140px] opacity-70" />
+        <div className="absolute top-1/3 -right-40 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[140px] opacity-60" />
+        <div className="absolute bottom-10 left-1/3 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[160px] opacity-50" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f293708_1px,transparent_1px),linear-gradient(to_bottom,#1f293708_1px,transparent_1px)] bg-[size:4rem_4rem]" />
+      </div>
 
       {/* Top Fixed Glassmorphism Navbar */}
       <Navbar
@@ -149,9 +152,6 @@ export const App: React.FC = () => {
 
         <ContactSection />
       </main>
-
-      {/* Floating 3D Enter Key Widget */}
-      <FloatingKeyWidget onClick={() => setCommandPaletteOpen(true)} />
 
       {/* Command Palette Modal (Ctrl+K) */}
       <CommandPalette

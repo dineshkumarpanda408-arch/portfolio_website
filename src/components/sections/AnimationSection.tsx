@@ -1,8 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Zap, MousePointer } from 'lucide-react';
+import { Sparkles, Zap, MousePointer, Layers, Cpu } from 'lucide-react';
 import { portfolioConfig } from '../../config/portfolioConfig';
-import { Vortex3DCanvas } from '../canvas/3d/Vortex3DCanvas';
 import { soundFx } from '../../utils/soundEffects';
 
 export const AnimationSection: React.FC = () => {
@@ -11,25 +10,23 @@ export const AnimationSection: React.FC = () => {
       <div className="text-center max-w-3xl mx-auto mb-12">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-purple-500/10 border border-purple-400/30 text-purple-300 text-xs font-semibold uppercase tracking-wider mb-4">
           <Sparkles className="w-3.5 h-3.5 text-purple-400" />
-          <span>Blender 3D Animations & WebGL Sandbox</span>
+          <span>Interactive UI & Motion Engineering</span>
         </div>
         <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
-          Blender 3D Animations & Motion Engineering
+          Micro-Interactions & Motion Engineering
         </h2>
         <p className="text-slate-400 text-sm mt-3">
-          Demonstrating high-quality Blender 3D animations, fluid 60FPS UI transitions, shader particle vortexes, vector motion, and interactive physics.
+          Demonstrating high-performance 60FPS UI transitions, physics-based micro-interactions, responsive spring vectors, and modern web design dynamics.
         </p>
       </div>
 
-      {/* WebGL 3D Particle Vortex Canvas */}
-      <Vortex3DCanvas />
-
-      {/* Grid of Interactive Animation Sandboxes */}
+      {/* Interactive Micro-Interactions Showcase Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-6">
         {portfolioConfig.animationItems.map((item) => (
           <motion.div
             key={item.id}
-            whileHover={{ scale: 1.03 }}
+            whileHover={{ y: -4, scale: 1.01 }}
+            transition={{ duration: 0.2 }}
             onMouseEnter={() => soundFx.playHover()}
             onClick={() => soundFx.playClick()}
             className="glass-panel p-6 rounded-3xl border border-white/10 shadow-xl bg-[#0c101d] hover:border-purple-400/50 transition-all cursor-pointer flex flex-col justify-between h-72"
